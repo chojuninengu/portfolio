@@ -15,7 +15,7 @@ A modern, responsive portfolio website built with HTML, CSS, and JavaScript to s
 ## Project Structure
 
 ```
-portfolio-website/
+portfolio/
 ├── index.html              # Main HTML file
 ├── style.css              # Styles and animations
 ├── main.js               # JavaScript functionality
