@@ -37,13 +37,13 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-// Admin credentials (in production, these should be stored in a secure database)
+// Admin credentials
 const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD = 'mr9'; // This will be generated
+const ADMIN_PASSWORD = '$2b$10$YourHashedPasswordHere'; // This will be generated
 
 // Generate hashed password
 async function generateHashedPassword() {
-    const password = 'mr9'; // Change this to your desired password
+    const password = 'admin123'; // Change this to your desired password
     const hashedPassword = await bcrypt.hash(password, 10);
     console.log('Generated hashed password:', hashedPassword);
     return hashedPassword;
@@ -124,9 +124,9 @@ async function startServer() {
     console.log('Server starting...');
     console.log('Admin credentials:');
     console.log('Username:', ADMIN_USERNAME);
-    console.log('Password: your-secure-password'); // Change this to your desired password
+    console.log('Password: admin123'); // This is the password you'll use to log in
     console.log('Hashed password:', hashedPassword);
-
+    
     app.listen(PORT, () => {
         console.log(`Server running on port ${PORT}`);
     });
