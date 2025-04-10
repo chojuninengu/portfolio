@@ -39,15 +39,8 @@ const upload = multer({ storage });
 
 // Admin credentials
 const ADMIN_USERNAME = 'admin';
-const ADMIN_PASSWORD = '$2b$10$YourHashedPasswordHere'; // This will be generated
-
-// Generate hashed password
-async function generateHashedPassword() {
-    const password = 'admin123'; // Change this to your desired password
-    const hashedPassword = await bcrypt.hash(password, 10);
-    console.log('Generated hashed password:', hashedPassword);
-    return hashedPassword;
-}
+// This is the hashed password for 'admin123'
+const ADMIN_PASSWORD = '$2b$10$Fkgr4M1Ugtm.9bhpwd6xqORAnbqsDRLVlxWvSepmMWbSfYdjqLXNW';
 
 // Authentication middleware
 const authenticateToken = (req, res, next) => {
@@ -119,17 +112,9 @@ app.get('/api/cv', (req, res) => {
 });
 
 // Initialize server
-async function startServer() {
-    const hashedPassword = await generateHashedPassword();
-    console.log('Server starting...');
+app.listen(PORT, () => {
+    console.log('Server running on port', PORT);
     console.log('Admin credentials:');
     console.log('Username:', ADMIN_USERNAME);
-    console.log('Password: admin123'); // This is the password you'll use to log in
-    console.log('Hashed password:', hashedPassword);
-    
-    app.listen(PORT, () => {
-        console.log(`Server running on port ${PORT}`);
-    });
-}
-
-startServer(); 
+    console.log('Password: admin123');
+}); 
