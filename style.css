@@ -14,6 +14,59 @@
     --font-primary: 'Helvetica Neue', Arial, sans-serif;
 }
 
+/* Ocean Theme */
+[data-theme="ocean"] {
+    --primary-color: #1B4965;
+    --secondary-color: #62B6CB;
+    --accent-color: #5FA8A3;
+    --highlight-color: #CAE9FF;
+    --neutral-color: #E8F1F2;
+    
+    --background-color: #ffffff;
+    --text-color: #1B4965;
+    --card-background: #E8F1F2;
+}
+
+/* Forest Theme */
+[data-theme="forest"] {
+    --primary-color: #2F4858;
+    --secondary-color: #5F9E6E;
+    --accent-color: #F6AE2D;
+    --highlight-color: #86BBD8;
+    --neutral-color: #F6F7F8;
+    
+    --background-color: #ffffff;
+    --text-color: #2F4858;
+    --card-background: #F6F7F8;
+}
+
+/* Sunset Theme */
+[data-theme="sunset"] {
+    --primary-color: #FF6B6B;
+    --secondary-color: #4ECDC4;
+    --accent-color: #FFE66D;
+    --highlight-color: #95E1D3;
+    --neutral-color: #FFF5F5;
+    
+    --background-color: #ffffff;
+    --text-color: #2C3E50;
+    --card-background: #FFF5F5;
+}
+
+/* Purple Theme */
+[data-theme="purple"] {
+    --primary-color: #6B4E71;
+    --secondary-color: #9B6B9E;
+    --accent-color: #D4A5A5;
+    --highlight-color: #B088F9;
+    --neutral-color: #F8F4FF;
+    
+    --background-color: #ffffff;
+    --text-color: #6B4E71;
+    --card-background: #F8F4FF;
+}
+
+/* Dark Theme */
 [data-theme="dark"] {
     --primary-color: #E0A458;
     --secondary-color: #419D78;
@@ -132,10 +185,11 @@ nav {
     right: 0;
     bottom: 0;
     background: linear-gradient(45deg, 
-        rgba(45, 48, 71, 0.05) 0%,
-        rgba(65, 157, 120, 0.05) 50%,
-        rgba(224, 164, 88, 0.05) 100%
+        var(--primary-color) 0%,
+        var(--secondary-color) 50%,
+        var(--accent-color) 100%
     );
+    opacity: 0.05;
     z-index: -1;
 }
 
@@ -146,6 +200,18 @@ nav {
     margin-bottom: 2rem;
     letter-spacing: -2px;
     position: relative;
+    background: linear-gradient(
+        45deg,
+        var(--primary-color),
+        var(--secondary-color),
+        var(--accent-color),
+        var(--highlight-color)
+    );
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 8s ease infinite;
 }
 
 .hero-title::after {
@@ -242,6 +308,10 @@ h2::after {
     border: 1px solid rgba(0,0,0,0.1);
     transition: var(--transition);
     border-left: 4px solid var(--secondary-color);
+    background: linear-gradient(to right,
+        var(--card-background) 0%,
+        var(--neutral-color) 100%
+    );
 }
 
 .skill-card:hover {
@@ -260,6 +330,10 @@ h2::after {
     background-color: var(--card-background);
     overflow: hidden;
     border-top: 4px solid var(--highlight-color);
+    background: linear-gradient(to bottom,
+        var(--card-background) 0%,
+        var(--neutral-color) 100%
+    );
 }
 
 .project-card:hover {
@@ -442,15 +516,58 @@ footer {
     }
 }
 
-/* Update gradient backgrounds */
-.hero-section::before {
-    background: linear-gradient(45deg, 
-        rgba(45, 48, 71, 0.05) 0%,
-        rgba(65, 157, 120, 0.05) 50%,
-        rgba(224, 164, 88, 0.05) 100%
-    );
+/* Add theme-specific animations */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .section:nth-child(odd) {
     background-color: var(--neutral-color);
+} 
+
+/* Theme Switcher Styles */
+.theme-switcher {
+    position: relative;
+    margin-left: 1rem;
+}
+
+#theme-select {
+    appearance: none;
+    background-color: var(--card-background);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+#theme-select:hover {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+#theme-select:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--accent-color);
+}
+
+.theme-switcher::after {
+    content: '▼';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: var(--text-color);
+    font-size: 0.8rem;
 } 
