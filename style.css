@@ -1,17 +1,27 @@
 :root {
-    --primary-color: #000000;
-    --secondary-color: #333333;
+    /* Primary Colors */
+    --primary-color: #2D3047; /* Deep Navy Blue */
+    --secondary-color: #419D78; /* Forest Green */
+    --accent-color: #E0A458; /* Warm Orange */
+    --highlight-color: #C04ABC; /* Vibrant Purple */
+    --neutral-color: #F7F7F7; /* Light Gray */
+    
+    /* Theme Colors */
     --background-color: #ffffff;
-    --text-color: #000000;
-    --card-background: #f8f9fa;
+    --text-color: #2D3047;
+    --card-background: #F7F7F7;
     --transition: all 0.3s ease;
     --font-primary: 'Helvetica Neue', Arial, sans-serif;
 }
 
 [data-theme="dark"] {
-    --primary-color: #ffffff;
-    --secondary-color: #cccccc;
-    --background-color: #000000;
+    --primary-color: #E0A458;
+    --secondary-color: #419D78;
+    --accent-color: #C04ABC;
+    --highlight-color: #2D3047;
+    --neutral-color: #1a1a1a;
+    
+    --background-color: #121212;
     --text-color: #ffffff;
     --card-background: #1a1a1a;
 }
@@ -67,7 +77,7 @@ nav {
     left: 0;
     width: 100%;
     height: 2px;
-    background-color: var(--primary-color);
+    background-color: var(--highlight-color);
     transform: scaleX(0);
     transition: transform 0.3s ease;
 }
@@ -121,7 +131,11 @@ nav {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(45deg, 
+        rgba(45, 48, 71, 0.05) 0%,
+        rgba(65, 157, 120, 0.05) 50%,
+        rgba(224, 164, 88, 0.05) 100%
+    );
     z-index: -1;
 }
 
@@ -141,7 +155,7 @@ nav {
     left: 0;
     width: 60px;
     height: 4px;
-    background-color: var(--primary-color);
+    background-color: var(--accent-color);
 }
 
 .hero-subtitle {
@@ -172,7 +186,7 @@ h2::after {
     left: 0;
     width: 60px;
     height: 4px;
-    background-color: var(--primary-color);
+    background-color: var(--secondary-color);
 }
 
 /* About Section */
@@ -204,6 +218,15 @@ h2::after {
 .stat-card h3 {
     font-size: 2.5rem;
     margin-bottom: 0.5rem;
+    color: var(--highlight-color);
+}
+
+.stat-card:nth-child(2) h3 {
+    color: var(--secondary-color);
+}
+
+.stat-card:nth-child(3) h3 {
+    color: var(--accent-color);
 }
 
 /* Skills Section */
@@ -218,10 +241,12 @@ h2::after {
     background-color: var(--card-background);
     border: 1px solid rgba(0,0,0,0.1);
     transition: var(--transition);
+    border-left: 4px solid var(--secondary-color);
 }
 
 .skill-card:hover {
     transform: translateY(-5px);
+    border-left-color: var(--accent-color);
 }
 
 /* Projects Section */
@@ -234,6 +259,11 @@ h2::after {
 .project-card {
     background-color: var(--card-background);
     overflow: hidden;
+    border-top: 4px solid var(--highlight-color);
+}
+
+.project-card:hover {
+    border-top-color: var(--accent-color);
 }
 
 .project-image {
@@ -281,7 +311,8 @@ input, textarea {
 
 input:focus, textarea:focus {
     outline: none;
-    border-color: var(--primary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 2px rgba(65, 157, 120, 0.1);
 }
 
 textarea {
@@ -309,8 +340,13 @@ textarea {
 
 .btn.secondary {
     background-color: transparent;
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    color: var(--secondary-color);
+}
+
+.btn.secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--background-color);
 }
 
 .btn:hover {
@@ -333,7 +369,7 @@ footer {
 }
 
 .social-link {
-    color: var(--text-color);
+    color: var(--primary-color);
     font-size: 1.5rem;
     transition: var(--transition);
     opacity: 0.8;
@@ -342,6 +378,7 @@ footer {
 .social-link:hover {
     opacity: 1;
     transform: translateY(-2px);
+    color: var(--accent-color);
 }
 
 .contact-social {
@@ -403,4 +440,17 @@ footer {
     .nav-links.active {
         transform: translateY(0);
     }
+}
+
+/* Update gradient backgrounds */
+.hero-section::before {
+    background: linear-gradient(45deg, 
+        rgba(45, 48, 71, 0.05) 0%,
+        rgba(65, 157, 120, 0.05) 50%,
+        rgba(224, 164, 88, 0.05) 100%
+    );
+}
+
+.section:nth-child(odd) {
+    background-color: var(--neutral-color);
 } 
