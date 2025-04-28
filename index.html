@@ -17,7 +17,16 @@
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
-                <button id="theme-toggle">🌓</button>
+                <div class="theme-switcher">
+                    <select id="theme-select">
+                        <option value="default">Default Theme</option>
+                        <option value="ocean">Ocean Theme</option>
+                        <option value="forest">Forest Theme</option>
+                        <option value="sunset">Sunset Theme</option>
+                        <option value="purple">Purple Theme</option>
+                        <option value="dark">Dark Theme</option>
+                    </select>
+                </div>
             </div>
             <button class="mobile-menu-btn">☰</button>
         </nav>
@@ -153,13 +162,17 @@
             navLinks.classList.toggle('active');
         });
 
-        // Theme toggle
-        const themeToggle = document.getElementById('theme-toggle');
-        themeToggle.addEventListener('click', () => {
-            document.body.setAttribute('data-theme', 
-                document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
-            );
+        // Theme switcher
+        const themeSelect = document.getElementById('theme-select');
+        themeSelect.addEventListener('change', (e) => {
+            document.body.setAttribute('data-theme', e.target.value);
+            localStorage.setItem('theme', e.target.value);
         });
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'default';
+        document.body.setAttribute('data-theme', savedTheme);
+        themeSelect.value = savedTheme;
     </script>
 </body>
 </html> 
