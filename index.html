@@ -3,34 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>JU-NINE NGU CHO | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="container">
+            <div class="logo">JU-NINE</div>
             <div class="nav-links">
+                <a href="#home">Home</a>
                 <a href="#about">About</a>
                 <a href="#skills">Skills</a>
                 <a href="#projects">Projects</a>
-                <a href="#certificates">Certificates</a>
                 <a href="#contact">Contact</a>
+                <button id="theme-toggle">🌓</button>
             </div>
-            <button id="theme-toggle">🌙</button>
+            <button class="mobile-menu-btn">☰</button>
         </nav>
     </header>
 
     <main>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <h1 class="hero-title">Human.<br>Strategic.<br>Technological.</h1>
+                <p class="hero-subtitle">Full Stack Developer with a Passion for Innovation</p>
+                <div class="social-links">
+                    <a href="https://github.com/chojuninengu" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/chojuninengu/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+                <a href="#contact" class="btn primary">Get in Touch</a>
+            </div>
+        </section>
+
         <section id="about" class="section">
             <div class="container">
-                <h1>About Me</h1>
+                <h2>About Me</h2>
                 <div class="about-content">
-                    <img src="profile.jpg" alt="Profile Picture" class="profile-image">
+                    <img src="your-image.jpg" alt="JU-NINE NGU CHO" class="profile-image">
                     <div class="about-text">
-                        <p>Hello! I'm a passionate developer who loves creating beautiful and functional web applications.</p>
-                        <div class="cv-section">
-                            <div id="cv-preview">
-                                <a href="cv.pdf" target="_blank" class="btn secondary">Download CV</a>
+                        <p>I am JU-NINE NGU CHO, a passionate Full Stack Developer with expertise in creating innovative web solutions. My approach combines technical excellence with strategic thinking to deliver impactful digital experiences.</p>
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <h3>5+</h3>
+                                <p>Years Experience</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>50+</h3>
+                                <p>Projects Completed</p>
+                            </div>
+                            <div class="stat-card">
+                                <h3>20+</h3>
+                                <p>Happy Clients</p>
                             </div>
                         </div>
                     </div>
@@ -40,51 +68,98 @@
 
         <section id="skills" class="section">
             <div class="container">
-                <h2>Skills</h2>
-                <div class="skills-grid"></div>
+                <h2>Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h3>Frontend Development</h3>
+                        <p>React, Vue.js, Angular</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Backend Development</h3>
+                        <p>Node.js, Python, Java</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>Database</h3>
+                        <p>MongoDB, PostgreSQL</p>
+                    </div>
+                    <div class="skill-card">
+                        <h3>DevOps</h3>
+                        <p>AWS, Docker, CI/CD</p>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section id="projects" class="section">
             <div class="container">
-                <h2>Projects</h2>
-                <div class="projects-grid"></div>
-            </div>
-        </section>
-
-        <section id="certificates" class="section">
-            <div class="container">
-                <h2>Certificates</h2>
-                <div id="certificates-container" class="certificates-grid"></div>
+                <h2>Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="project1.jpg" alt="Project 1" class="project-image">
+                        <h3>Project Name</h3>
+                        <p>Project description goes here</p>
+                        <div class="project-links">
+                            <a href="#" class="btn secondary">View Demo</a>
+                            <a href="#" class="btn primary">Source Code</a>
+                        </div>
+                    </div>
+                    <!-- Add more project cards as needed -->
+                </div>
             </div>
         </section>
 
         <section id="contact" class="section">
             <div class="container">
-                <h2>Contact Me</h2>
-                <form id="contact-form" action="https://formspree.io/f/your-formspree-id" method="POST">
+                <h2>Let's Connect</h2>
+                <form class="contact-form">
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
+                        <input type="text" id="name" required>
                     </div>
                     <div class="form-group">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
+                        <input type="email" id="email" required>
                     </div>
                     <div class="form-group">
                         <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
+                        <textarea id="message" required></textarea>
                     </div>
                     <button type="submit" class="btn primary">Send Message</button>
                 </form>
+                <div class="social-links contact-social">
+                    <a href="https://github.com/chojuninengu" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/chojuninengu/" target="_blank" class="social-link">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 JU-NINE NGU CHO. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.setAttribute('data-theme', 
+                document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+            );
+        });
+    </script>
 </body>
 </html> 
