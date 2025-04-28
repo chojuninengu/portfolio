@@ -6,56 +6,61 @@
     <title>JU-NINE NGU CHO | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-theme="dark">
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+    
     <header>
         <nav class="container">
             <div class="logo">JU-NINE</div>
             <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#awards" class="nav-link">Awards</a>
+                <a href="#contact" class="nav-link">Contact</a>
                 <div class="theme-switcher">
-                    <select id="theme-select">
-                        <option value="default">Default Theme</option>
-                        <option value="ocean">Ocean Theme</option>
-                        <option value="forest">Forest Theme</option>
-                        <option value="sunset">Sunset Theme</option>
-                        <option value="purple">Purple Theme</option>
-                        <option value="dark">Dark Theme</option>
-                    </select>
+                    <button id="theme-toggle" aria-label="Toggle theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </div>
             </div>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="mobile-menu-btn" aria-label="Menu">☰</button>
         </nav>
     </header>
 
     <main>
         <section id="home" class="hero-section">
             <div class="container">
-                <h1 class="hero-title">Human.<br>Strategic.<br>Technological.</h1>
-                <p class="hero-subtitle">Full Stack Developer with a Passion for Innovation</p>
-                <div class="social-links">
-                    <a href="https://github.com/chojuninengu" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/chojuninengu/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
+                <div class="hero-content">
+                    <h1 class="hero-title">JU-NINE<br>NGU CHO</h1>
+                    <p class="hero-subtitle">Full Stack Developer & Digital Creator</p>
+                    <div class="hero-cta">
+                        <a href="#projects" class="btn primary">View My Work</a>
+                        <a href="#contact" class="btn secondary">Get in Touch</a>
+                    </div>
                 </div>
-                <a href="#contact" class="btn primary">Get in Touch</a>
+                <div class="scroll-indicator">
+                    <span>Scroll</span>
+                    <div class="scroll-line"></div>
+                </div>
             </div>
         </section>
 
         <section id="about" class="section">
             <div class="container">
-                <h2>About Me</h2>
+                <h2 class="section-title">About Me</h2>
                 <div class="about-content">
-                    <img src="your-image.jpg" alt="JU-NINE NGU CHO" class="profile-image">
+                    <div class="about-image">
+                        <div class="image-placeholder"></div>
+                    </div>
                     <div class="about-text">
-                        <p>I am JU-NINE NGU CHO, a passionate Full Stack Developer with expertise in creating innovative web solutions. My approach combines technical excellence with strategic thinking to deliver impactful digital experiences.</p>
+                        <p class="lead-text">I am JU-NINE NGU CHO, a passionate Full Stack Developer with expertise in creating innovative web solutions.</p>
+                        <p>My approach combines technical excellence with strategic thinking to deliver impactful digital experiences. With a background in both frontend and backend development, I specialize in building scalable applications that solve real-world problems.</p>
                         <div class="stats-grid">
                             <div class="stat-card">
                                 <h3>5+</h3>
@@ -75,73 +80,130 @@
             </div>
         </section>
 
-        <section id="skills" class="section">
+        <section id="projects" class="section">
             <div class="container">
-                <h2>Expertise</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Frontend Development</h3>
-                        <p>React, Vue.js, Angular</p>
+                <h2 class="section-title">Featured Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>E-Commerce Platform</h3>
+                            <p>A full-featured e-commerce solution with payment integration, inventory management, and analytics dashboard.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn secondary">View Demo</a>
+                                <a href="#" class="btn primary">Source Code</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <h3>Backend Development</h3>
-                        <p>Node.js, Python, Java</p>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>AI-Powered Analytics</h3>
+                            <p>A data visualization platform that uses machine learning to predict trends and provide actionable insights.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn secondary">View Demo</a>
+                                <a href="#" class="btn primary">Source Code</a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="skill-card">
-                        <h3>Database</h3>
-                        <p>MongoDB, PostgreSQL</p>
-                    </div>
-                    <div class="skill-card">
-                        <h3>DevOps</h3>
-                        <p>AWS, Docker, CI/CD</p>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <div class="image-placeholder"></div>
+                        </div>
+                        <div class="project-content">
+                            <h3>Social Media Dashboard</h3>
+                            <p>A comprehensive dashboard for managing multiple social media accounts with scheduling and analytics.</p>
+                            <div class="project-links">
+                                <a href="#" class="btn secondary">View Demo</a>
+                                <a href="#" class="btn primary">Source Code</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="section">
+        <section id="awards" class="section">
             <div class="container">
-                <h2>Featured Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <img src="project1.jpg" alt="Project 1" class="project-image">
-                        <h3>Project Name</h3>
-                        <p>Project description goes here</p>
-                        <div class="project-links">
-                            <a href="#" class="btn secondary">View Demo</a>
-                            <a href="#" class="btn primary">Source Code</a>
+                <h2 class="section-title">Awards & Recognition</h2>
+                <div class="awards-grid">
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-award"></i>
                         </div>
+                        <h3>Best Web Developer 2023</h3>
+                        <p>Tech Excellence Awards</p>
                     </div>
-                    <!-- Add more project cards as needed -->
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Innovation in Design</h3>
+                        <p>Digital Design Summit</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <h3>Outstanding Performance</h3>
+                        <p>Freelance Excellence</p>
+                    </div>
+                    <div class="award-card">
+                        <div class="award-icon">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h3>Top Rated Developer</h3>
+                        <p>Global Tech Community</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="contact" class="section">
             <div class="container">
-                <h2>Let's Connect</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" required>
+                <h2 class="section-title">Let's Connect</h2>
+                <div class="contact-content">
+                    <div class="contact-form-container">
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn primary">Send Message</button>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" required>
+                    <div class="contact-info">
+                        <div class="social-links">
+                            <a href="https://github.com/chojuninengu" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/chojuninengu/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" target="_blank" class="social-link">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="contact-details">
+                            <p><i class="fas fa-envelope"></i> contact@ju-nine.com</p>
+                            <p><i class="fas fa-map-marker-alt"></i> Paris, France</p>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn primary">Send Message</button>
-                </form>
-                <div class="social-links contact-social">
-                    <a href="https://github.com/chojuninengu" target="_blank" class="social-link">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/chojuninengu/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
                 </div>
             </div>
         </section>
@@ -162,17 +224,87 @@
             navLinks.classList.toggle('active');
         });
 
-        // Theme switcher
-        const themeSelect = document.getElementById('theme-select');
-        themeSelect.addEventListener('change', (e) => {
-            document.body.setAttribute('data-theme', e.target.value);
-            localStorage.setItem('theme', e.target.value);
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            
+            // Update icon
+            const icon = themeToggle.querySelector('i');
+            icon.className = newTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
         });
 
         // Load saved theme
-        const savedTheme = localStorage.getItem('theme') || 'default';
-        document.body.setAttribute('data-theme', savedTheme);
-        themeSelect.value = savedTheme;
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        body.setAttribute('data-theme', savedTheme);
+        
+        // Update icon based on saved theme
+        const icon = themeToggle.querySelector('i');
+        icon.className = savedTheme === 'dark' ? 'fas fa-moon' : 'fas fa-sun';
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section, .hero-content, .project-card, .award-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Custom cursor
+        const cursor = document.querySelector('.cursor');
+        const cursorFollower = document.querySelector('.cursor-follower');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            
+            setTimeout(() => {
+                cursorFollower.style.left = e.clientX + 'px';
+                cursorFollower.style.top = e.clientY + 'px';
+            }, 100);
+        });
+        
+        document.querySelectorAll('a, button').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('active');
+                cursorFollower.classList.add('active');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('active');
+                cursorFollower.classList.remove('active');
+            });
+        });
     </script>
 </body>
 </html> 
